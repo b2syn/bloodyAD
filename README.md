@@ -7,12 +7,6 @@ Mit bloodyAD lassen sich u. a. Benutzer- und Gruppeninformationen auslesen, Be
 
 Im Unterschied zu reinen Abfrage-Tools bietet bloodyAD umfassende Schreib- und Kontrollmöglichkeiten – ideal für Red Teaming und Post-Exploitation-Szenarien. Dabei bleibt es CLI-basiert, leichtgewichtig und präzise steuerbar.
 
-## weiterführende Informationen
-
-https://github.com/CravateRouge/bloodyAD/wiki/User-Guide
-
-https://www.thehacker.recipes/
-
 <br>
 
 ## Inhaltsverzeichnis
@@ -35,6 +29,18 @@ https://www.thehacker.recipes/
 - [Kerberos Ticket](#-kerberos-ticket)
 
 <br>
+
+## Machines
+
+Certified (HackTheBox)
+
+<br>
+
+## weiterführende Informationen
+
+https://github.com/CravateRouge/bloodyAD/wiki/User-Guide
+
+https://www.thehacker.recipes/
 
 ---
 
