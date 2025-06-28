@@ -1,6 +1,12 @@
 
 # 🩸 BloodyAD Cheatsheet
 
+bloodyAD ist ein leistungsstarkes Kommandozeilen-Tool zur Interaktion mit Active Directory-Umgebungen. Es wurde speziell für offensive Sicherheitsanalysen entwickelt und ermöglicht das gezielte Abfragen, Modifizieren und Ausnutzen von AD-Objekten. Das Tool unterstützt Authentifizierung über Benutzername und Passwort sowie komplexe Angriffe auf Benutzerrechte und -eigenschaften.
+
+Mit bloodyAD lassen sich u. a. Benutzer- und Gruppeninformationen auslesen, Berechtigungen setzen, Passwörter ändern, Shadow Credentials hinzufügen oder privilegierte Objekte manipulieren. Es basiert auf LDAP-Kommunikation und nutzt interne AD-Mechanismen wie ACLs, UAC-Flags und SID-History.
+
+Im Unterschied zu reinen Abfrage-Tools bietet bloodyAD umfassende Schreib- und Kontrollmöglichkeiten – ideal für Red Teaming und Post-Exploitation-Szenarien. Dabei bleibt es CLI-basiert, leichtgewichtig und präzise steuerbar.
+
 ## Inhaltsverzeichnis
 
 - [Retrieve Domain Information](#-retrieve-domain-information)
