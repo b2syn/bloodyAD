@@ -1,9 +1,12 @@
 
 ## 🩸 BloodyAD Cheatsheet
 
+[Zur Sektion "Retrieve Domain Information"](##-retrieve-domain-information)
+
+
 <br>
 
-🧩 **Retrieve Domain Information**
+### 🧩 Retrieve Domain Information
 
 Zeigt grundlegende Informationen zur Active Directory-Domäne wie Domain-Controller, Domänenfunktionsebene und andere Metadaten an.
 ```zsh
@@ -12,7 +15,7 @@ bloodyAD --host $IP -d b2syn.htb -u a.james -p 'Maofron32!' get domain
 
 <br>
 
-🧩 **Retrieve User Information**
+### 🧩 Retrieve User Information
 
 Fragt Active Directory-Objekt (z. B. einen Benutzer) ab und zeigt alle LDAP-Attribute des Zielobjekts.
 ```zsh
@@ -21,7 +24,7 @@ bloodyAD --host $IP -d b2syn.htb -u a.james -p 'Maofron32!' get object administr
 
 <br>
 
-🧩 **Get groupMembers**
+### 🧩 Get groupMembers
 
 Listet alle Mitglieder der angegebenen AD-Gruppe (z. B. DEVELOPERS) auf und zeigt deren Benutzernamen und Details.
 ```zsh
@@ -30,7 +33,7 @@ bloodyAD --host $IP -d b2syn.htb -u a.james -p 'Maofron32!' get groupMembers DEV
 
 <br>
 
-🧩 **Add User To Group**
+### 🧩 Add User To Group
 
 Zeigt alle Active Directory-Objekte an, auf die der Nutzer a.james Schreibrechte hat. Mit --detail werden zusätzlich ausführliche Informationen zu den Berechtigungen ausgegeben.
 Fügt den Benutzer a.james zur Gruppe DEVELOPERS im Active Directory hinzu. Dadurch erhält der Nutzer die Rechte und Mitgliedschaften der Zielgruppe.
@@ -41,7 +44,7 @@ bloodyAD --host $IP -d b2syn.htb -u a.james -p 'Maofron32!' add groupMember DEVE
 
 <br>
 
-🧩 **Add New User**
+### 🧩 Add New User
 
 Legt einen neuen Benutzer im Active Directory an, um ihn in der Domäne zu registrieren.
 ```zsh
@@ -50,7 +53,7 @@ bloodyAD --host $IP -d b2syn.htb -u a.james -p 'Maofron32!' add user <Benutzerna
 
 <br>
 
-🧩 **Get Computers**
+### 🧩 Get Computers
 
 Listet alle Computerobjekte innerhalb der Active Directory-Domäne auf.
 ```zsh
@@ -58,7 +61,7 @@ bloodyAD --host $IP -d b2syn.htb -u a.james -p 'Maofron32!' get computers
 ```
 <br>
 
-🧩 **Change Password**
+### 🧩 Change Password
 
 Setzt das Passwort des angegebenen Active Directory-Benutzers ($target_username) auf ein neues Passwort ($new_password). Damit kann der Nutzer das Passwort eines anderen AD-Accounts ändern.
 ```zsh
@@ -67,7 +70,7 @@ bloodyAD --host $IP -d b2syn.htb -u a.james -p 'Maofron32!' set password $target
 
 <br>
 
-🧩 **Give User GenericAll Rights**
+### 🧩 Give User GenericAll Rights
 
 Gewährt dem Benutzer a.james volle Zugriffsrechte („genericAll“) auf das AD-Objekt „Administrator“. Dadurch kann a.james alle Eigenschaften und Berechtigungen des Administrator-Kontos ändern.
 "Füge der Access Control List (ACL) des Administrator-Objekts hinzu, dass a.james volle Rechte bekommt.“
@@ -77,7 +80,7 @@ bloodyAD --host $IP -d b2syn.htb -u a.james -p 'Maofron32!' add genericAll "CN=A
 
 <br>
 
-🧩 **Write Owner**
+### 🧩 Write Owner
 
 Setzt den Besitzer des Active Directory-Objekts „DEVELOPERS“ auf den Benutzer a.james. Dadurch erhält a.james volle Kontrolle über dieses Objekt.
 ```zsh
@@ -86,7 +89,7 @@ bloodyAD --host $IP -d b2syn.htb -u a.james -p 'Maofron32!' set owner "CN=DEVELO
 
 <br>
 
-🧩 **Enable a Disabled Account**
+### 🧩 Enable a Disabled Account
 
 Entfernt das ACCOUNTDISABLE-Flag im User-Account-Control (UAC) des Benutzers j.calvus, wodurch das Konto wieder aktiviert wird.
 ```zsh
@@ -95,7 +98,7 @@ bloodyAD --host $IP -d b2syn.htb -u a.james -p 'Maofron32!' remove uac "CN=j.cal
 
 <br>
 
-🧩 **Add The TRUSTED_TO_AUTH_FOR_DELEGATION Flag**
+### 🧩 Add The TRUSTED_TO_AUTH_FOR_DELEGATION Flag
 
 Fügt dem Benutzerkonto service-account das UAC-Flag TRUSTED_TO_AUTH_FOR_DELEGATION hinzu. Dadurch wird das Konto für die vertrauenswürdige Delegierung autorisiert.
 ```zsh
@@ -104,7 +107,7 @@ bloodyAD --host $IP -d b2syn.htb -u a.james -p 'Maofron32!' add uac "CN=service-
 
 <br>
 
-🧩 **ReadGMSAPassword**
+### 🧩 ReadGMSAPassword
 
 Fragt das Active Directory-Objekt gmsa-web (Managed Service Account) ab und zeigt das Attribut msDS-ManagedPassword mit dem aktuellen verwalteten Passwort an.
 ```zsh
@@ -112,7 +115,7 @@ bloodyAD --host $IP -d b2syn.htb -u a.james -p 'Maofron32!' get object "CN=gmsa-
 ```
 <br>
 
-🧩 **Modify UPN**
+### 🧩 Modify UPN
 Fragt beim Active Directory-Benutzer joerg das Attribut userPrincipalName ab und zeigt dessen Wert an.
 Ändert im Active Directory beim Benutzer joerg das Attribut userPrincipalName auf „joerg2@b2syn.htb“. Damit wird der Anmeldename des Nutzers angepasst.
 ```zsh
@@ -122,7 +125,7 @@ bloodyAD --host $IP -d b2syn.htb -u admin -p 'Passw0rd!' set object "CN=joerg,OU
 
 <br>
 
-🧩 **Shadow Credentials**
+### 🧩 Shadow Credentials
 
 Fügt dem AD-Benutzer joerg sogenannte Shadow Credentials hinzu, die alternative Anmeldedaten (z. B. für Azure AD Pass-Through Authentication) ermöglichen.
 ```zsh
