@@ -6,7 +6,7 @@
 🧩 **Retrieve User Information**
 
 Fragt Active Directory-Objekt (z. B. einen Benutzer) ab und zeigt alle LDAP-Attribute des Zielobjekts.
-```bash
+```zsh
 bloodyAD --host 10.129.204.169 -d puppy.htb -u levi.james -p 'KingofAkron2025!' get object administrator
 ```
 <br>
