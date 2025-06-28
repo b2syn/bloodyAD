@@ -42,6 +42,8 @@ https://github.com/CravateRouge/bloodyAD/wiki/User-Guide
 
 https://www.thehacker.recipes/
 
+https://adminions.ca/books/active-directory-enumeration-and-exploitation/page/bloodyad
+
 ---
 
 <br>
