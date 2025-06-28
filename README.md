@@ -1,23 +1,26 @@
 
-## 🩸 BloodyAD Cheatsheet
+# 🩸 BloodyAD Cheatsheet
 
-# Inhaltsverzeichnis
+## Inhaltsverzeichnis
 
-- [🧩 Retrieve Domain Information](#-retrieve-domain-information)
-- [🧩 Retrieve User Information](#-retrieve-user-information)
-- [🧩 Get groupMembers](#-get-groupmembers)
-- [🧩 Add User To Group](#-add-user-to-group)
-- [🧩 Add New User](#-add-new-user)
-- [🧩 Get Computers](#-get-computers)
-- [🧩 Change Password](#-change-password)
-- [🧩 Give User GenericAll Rights](#-give-user-genericall-rights)
-- [🧩 Write Owner](#-write-owner)
-- [🧩 Enable a Disabled Account](#-enable-a-disabled-account)
-- [🧩 Add The TRUSTED_TO_AUTH_FOR_DELEGATION Flag](#-add-the-trusted_to_auth_for_delegation-flag)
-- [🧩 ReadGMSAPassword](#-readgmsapassword)
-- [🧩 Modify UPN](#-modify-upn)
-- [🧩 Shadow Credentials](#-shadow-credentials)
+- [Retrieve Domain Information](#-retrieve-domain-information)
+- [Retrieve User Information](#-retrieve-user-information)
+- [Get groupMembers](#-get-groupmembers)
+- [Add User To Group](#-add-user-to-group)
+- [Add New User](#-add-new-user)
+- [Get Computers](#-get-computers)
+- [Change Password](#-change-password)
+- [Give User GenericAll Rights](#-give-user-genericall-rights)
+- [Write Owner](#-write-owner)
+- [Enable a Disabled Account](#-enable-a-disabled-account)
+- [Add The TRUSTED_TO_AUTH_FOR_DELEGATION Flag](#-add-the-trusted_to_auth_for_delegation-flag)
+- [ReadGMSAPassword](#-readgmsapassword)
+- [Modify UPN](#-modify-upn)
+- [Shadow Credentials](#-shadow-credentials)
 
+<br>
+
+---
 
 <br>
 
